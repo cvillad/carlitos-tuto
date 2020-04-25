@@ -11,6 +11,7 @@ import {
 
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+import Home from './pages/Home/Home';
 
 
 const customTheme = {
@@ -35,6 +36,7 @@ function App() {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/home" component={Home} />
           <Redirect to="/login" />
         </Switch>
       </Router>

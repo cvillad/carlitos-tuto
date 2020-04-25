@@ -29,6 +29,7 @@ function Login() {
       const { email, password } = formData;
       const response = await firebase.auth().signInWithEmailAndPassword(email, password);
       console.log(response);
+      history.push('/home')
     } catch (err) {
       console.log(err);
     } finally {
@@ -50,7 +51,6 @@ function Login() {
         <FormLabel htmlFor="email">Email address</FormLabel>
         <Input
           type="email"
-          id="email"
           name="email"
           value={formData.email}
           aria-describedby="email-helper-text"
@@ -64,7 +64,6 @@ function Login() {
         <FormLabel htmlFor="password">Password</FormLabel>
         <Input
           type="password"
-          id="password"
           name="password"
           value={formData.password}
           onChange={handleInputChange}
@@ -78,7 +77,7 @@ function Login() {
         variant="outline"
         onClick={handleSubmit}
       >
-        Submit
+        Login
       </Button>
       <Button onClick={() => history.push('/signup')}>Signup</Button>
     </div>
